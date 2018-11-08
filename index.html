@@ -1,17 +1,39 @@
 !<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bookmark App</title>
+  <!-- Styling -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 <body>
+  <header role="banner">
+    <h1>Bookmark App</h1>
+  </header>
 
+  <section class="control-row">
+    <div class="controls">
+      <button class="new-bookmark" type="button">Create New Bookmark</button>
+        <select class="filter-by">
+          <option value="Index">Select Minimum Stars</option>
+          <option value="5">★★★★★</option>
+          <option value="4">★★★★☆</option>
+          <option value="3">★★★☆☆</option>
+          <option value="2">★★☆☆☆</option>
+          <option value="1">★☆☆☆☆</option>
+          <option value="0">☆☆☆☆☆</option>
+        </select>
+    </div>
+  </section>
 
+  <main class="bookmark-view">
+    <div class="form" id="js-form"></div>
+  </main>
+  <!-- Scripts -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="scripts/Api.js"></script>
 </body>
