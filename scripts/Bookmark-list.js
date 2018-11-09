@@ -1,9 +1,5 @@
-'use strict';
-
-
 /*global Api,Store*/
-/*eslint-env jquery*/
-/* bookmarkList*/
+
 const bookmarkList = function () {
 
   function listenNewBookmark() {
