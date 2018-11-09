@@ -1,0 +1,40 @@
+h1 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 54px;
+  text-align: center;
+  margin-bottom: .5em;
+}
+
+.add-bookmark-container {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  font-size: 1em;
+  font-family: 'Open Sans';
+}
+
+.search-filter-container {
+  align-content: center;
+  justify-content: center;
+  border: 1px solid black;
+  padding: 5px;
+  font-size: 1em;
+  text-align: center;
+  font-family: 'Open Sans';
+}
+
+.bookmark-container {
+  list-style: none;
+  text-align: center;
+}
+
+.starCount {
+  justify-content: center;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+

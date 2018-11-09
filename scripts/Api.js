@@ -1,56 +1,47 @@
-/* eslint-env jquery */
-'use strict';
+/* eslint-disable strict */
+/* eslint-env jquery*/
 
-const Api = (function() {
-  const BASE_URL = 'http://thinkful-list-api.herokuapp.com/bryan/bookmarks';
-  function getBookmark(callback) {
-    $.getJSON(BASE_URL, callback);
+const Api = function () {
 
-  };
+  const BASE_URL = 'https://thinkful-list-api.herokuapp.com/bryan/bookmarks';
 
-  function createBookmark(name, url, description, rating, callback, errorCallback) {
-    const newBookmark = JSON.stringify(
-      {
-        name,
-        url, 
-        description,
-        rating,
-      }
-    );
+  function fetchFromServer(callback) {
+    $.getJSON(BASE_URL,(callback));
+  }
+  
+  function createBookmark(bookmark,callback) {
+    const updateQueryObj = JSON.stringify(bookmark);
     $.ajax({
-      url: `${BASE_URL}`,
-      method: 'POST',
+      url: BASE_URL,
       contentType: 'application/json',
-      data: newBookmark,
-      success: callback,
-      error: errorCallback,
+      method: 'POST',
+      data: updateQueryObj,
+      success: callback
     });
-  };
+  }
 
-  function updateBookmark(id, updateData, callback, errorCallback) {
+  function deleteBookmark(itemId, callback) {
     $.ajax({
-      url: `${BASE_URL}/${id}`,
+      url: `${BASE_URL}/${itemId}`,
+      method: 'DELETE',
+      success: callback});
+  }
+
+  function updateBookmark(itemId, Object, callback) {
+    $.ajax({
+      url: `${BASE_URL}/${itemId}`,
       method: 'PATCH',
       contentType: 'application/json',
-      data: JSON.stringify(updateData),
-      success: callback,
-      error: errorCallback,
+      data: JSON.stringify(Object),
+      success: callback
     });
-  };
-
-  function deleteBookmark(id, updateData, callback, errorCallback) {
-    $.ajax({
-      url: `${BASE_URL}/${id}`,
-      method: 'DELETE',
-      success: callback,
-      error: errorCallback,
-    })
-  };
+  }
 
   return {
-    getBookmark,
+    fetchFromServer,
     createBookmark,
-    updateBookmark,
     deleteBookmark,
+    updateBookmark
   };
-})();
+
+}();
