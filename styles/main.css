@@ -43,7 +43,14 @@ button.add-bookmark-button {
   margin-top: 5px;
   margin-left: auto;
   margin-right: auto;
+}
 
+button.wider-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .search-filter-container {
@@ -69,8 +76,11 @@ button.add-bookmark-button {
   list-style: none;
 }
 
-.static-view-item-container {
+section.static-view-item-container {
   font-family: 'Open Sans';
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .static-button-div {

@@ -1,3 +1,5 @@
+/* eslint-disable strict */
+/* eslint-env jquery */
 const Api = function () {
 
   const BASE_URL = 'https://thinkful-list-api.herokuapp.com/bryan/bookmarks';
@@ -5,15 +7,17 @@ const Api = function () {
   function fetchFromServer(callback) {
     $.getJSON(BASE_URL,(callback));
   }
-  
-  function createBookmark(bookmark,callback) {
-    const updateQueryObj = JSON.stringify(bookmark);
+    
+  function createBookmark(bookmark, callback) {
     $.ajax({
       url: BASE_URL,
       contentType: 'application/json',
       method: 'POST',
-      data: updateQueryObj,
-      success: callback
+      data: JSON.stringify(bookmark),
+      success: callback,
+      error: function (xhr, ajaxOptions, thrownError) {
+        alert(`${xhr.status}: ${thrownError}`);
+      }
     });
   }
 
@@ -21,7 +25,11 @@ const Api = function () {
     $.ajax({
       url: `${BASE_URL}/${itemId}`,
       method: 'DELETE',
-      success: callback});
+      success: callback,
+      error:function (xhr, ajaxOptions, thrownError) {
+        alert(`${xhr.status}: ${thrownError}`);
+      }
+    });  
   }
 
   function updateBookmark(itemId, Object, callback) {
@@ -30,7 +38,10 @@ const Api = function () {
       method: 'PATCH',
       contentType: 'application/json',
       data: JSON.stringify(Object),
-      success: callback
+      success: callback,
+      error:function (xhr, ajaxOptions, thrownError) {
+        alert(`${xhr.status}: ${thrownError}`);
+      }
     });
   }
 
@@ -39,6 +50,8 @@ const Api = function () {
     createBookmark,
     deleteBookmark,
     updateBookmark
+
   };
 
 }();
+
