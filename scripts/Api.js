@@ -16,7 +16,7 @@ const Api = function () {
       data: JSON.stringify(bookmark),
       success: callback,
       error: function (xhr, ajaxOptions, thrownError) {
-        alert(`${xhr.status}: ${thrownError}`);
+        alert(`${xhr.status}: ${thrownError} ${Object.values(JSON.parse(xhr.responseText))}`);
       }
     });
   }
