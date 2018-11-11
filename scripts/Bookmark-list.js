@@ -1,3 +1,5 @@
+/* eslint-disable strict */
+/* eslint-env jquery */
 /*global Api,Store*/
 
 const bookmarkList = function () {
@@ -211,7 +213,7 @@ const bookmarkList = function () {
       let editingDescHTML = `<textarea class="expand-bookmark-description-edit">${editBookmark.desc}</textarea>`;
       let notEditingDescHTML = `<p class="expand-bookmark-description center">${editBookmark.desc}</p>`;
       HTML += `
-      <section role="region" class="static-view-item-container" data-item-id = "${editBookmark.id}">
+      <section role="region" class="static-view-item-container lightbox" data-item-id = "${editBookmark.id}">
       ${editBookmark.isEditingTitle ? editingTitleHTML : notEditingTitleHTML}
       ${editBookmark.isEditingDesc ? editingDescHTML : notEditingDescHTML}
       <div class="expand-rating-cont">

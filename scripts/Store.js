@@ -1,30 +1,33 @@
 /* eslint-disable strict */
 const Store = function () {
 
+  const bookmarks = [];
+  const searchTerm = '';
+
   const addBookmark = function (bookmark) {
-    this.bookmarks.push({
-      id:bookmark.id,
-      title:bookmark.title,
-      url:bookmark.url,
-      desc:bookmark.desc,
-      rating:bookmark.rating,
-      isCondensed:false,
-      isEditingTitle:false,
-      isEditingDesc:false
+    this.bookmarks.push ({
+      id: bookmark.id,
+      title: bookmark.title,
+      url: bookmark.url,
+      desc: bookmark.desc,
+      rating: bookmark.rating,
+      isCondensed: false,
+      isEditingTitle: false,
+      isEditingDesc: false
     });   
   };
 
   const pullBookmarks = function (data) {
     data.forEach((item) => {
-      this.bookmarks.push({
-        id:item.id,
-        title:item.title,
-        url:item.url,
-        desc:item.desc,
-        rating:item.rating,
-        isCondensed:false,
-        isEditingTitle:false,
-        isEditingDesc:false
+      this.bookmarks.push ({
+        id: item.id,
+        title: item.title,
+        url: item.url,
+        desc: item.desc,
+        rating: item.rating,
+        isCondensed: false,
+        isEditingTitle: false,
+        isEditingDesc: false
       });
     });
   };
@@ -41,15 +44,11 @@ const Store = function () {
     });
     return filteredBookmarkList;
   };
-
-  const bookmarks = [];
-  const searchTerm = '';
   
   return {
-    isCondensed: false,
-    filterRating: 0,
-    searchTerm,
     bookmarks,
+    searchTerm,
+    filterRating: 0,
     addBookmark,
     pullBookmarks,
     deleteBookmark,

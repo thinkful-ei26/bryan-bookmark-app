@@ -27,7 +27,7 @@ const Api = function () {
       method: 'DELETE',
       success: callback,
       error:function (xhr, ajaxOptions, thrownError) {
-        alert(`${xhr.status}: ${thrownError}`);
+        alert(`${xhr.status}: ${thrownError} ${Object.values(JSON.parse(xhr.responseText))}`);
       }
     });  
   }
@@ -40,7 +40,7 @@ const Api = function () {
       data: JSON.stringify(Object),
       success: callback,
       error:function (xhr, ajaxOptions, thrownError) {
-        alert(`${xhr.status}: ${thrownError}`);
+        alert(`${xhr.status}: ${thrownError} ${Object.values(JSON.parse(xhr.responseText))}`);
       }
     });
   }
