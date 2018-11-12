@@ -50,7 +50,6 @@ const Api = function () {
     createBookmark,
     deleteBookmark,
     updateBookmark
-
   };
 
 }();
