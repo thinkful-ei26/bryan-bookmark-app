@@ -136,8 +136,7 @@ section.static-view-item-container {
 }
 
 input:invalid {
-  border-top: 1px dotted red;
-  border-left: 1px dotted red;
+  border: 2px dotted red;
 }
 
 input:valid {
