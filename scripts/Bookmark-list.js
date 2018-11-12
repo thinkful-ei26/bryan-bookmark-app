@@ -45,6 +45,10 @@ const bookmarkList = function () {
       Store.isCondensed = true;
       pushHTML(generateHTML(Store.bookmarks,$(e.target).closest('li').attr('data-item-id')));
     });
+    $('.bookmark-container').on('keydown','.bookmark', (e) => {
+      Store.isCondensed = true;
+      pushHTML(generateHTML(Store.bookmarks,$(e.target).closest('li').attr('data-item-id')));
+    });
   }
 
   function listenClose() {
@@ -171,10 +175,13 @@ const bookmarkList = function () {
       filteredArray = Store.filterBookmarks(Store.filterRating);
       filteredArray.forEach((item) => {
         HTML += `
-        <li class="bookmark" data-item-id='${item.id}'>
-        <h3 class="bookmark-title">${item.title}</h3>
-        <p class="center">${bookmarkList.generateStars(item.rating)}</p>
-        </li>`;
+        <section class="bookmark data-item-id="${item.id}">
+          <li class="bookmark" data-item-id='${item.id}' tabindex="0">
+          <h3 class="bookmark-title">${item.title}</h3>
+          <p class="center">${bookmarkList.generateStars(item.rating)}</p>
+          </li>
+        </section>`;
+          
       });
     } 
 
@@ -185,10 +192,12 @@ const bookmarkList = function () {
       HTML = '';
       searchfilteredArray.forEach((item) => {
         HTML += `
-        <li class="bookmark" data-item-id="${item.id}">
-        <h3 class="bookmark-title">${item.title}</h3>
-        <p class="center">${bookmarkList.generateStars(item.rating)}</p>
-        </li>`;
+        <section class="bookmark data-item-id="${item.id}">
+          <li class="bookmark" data-item-id="${item.id}" tabindex="0">
+          <h3 class="bookmark-title">${item.title}</h3>
+          <p class="center">${bookmarkList.generateStars(item.rating)}</p>
+          </li>
+        </section>`;
       });
     }
 
@@ -196,10 +205,12 @@ const bookmarkList = function () {
     if (!Store.searchTerm && Store.filterRating === 0) {
       localBookmarks.forEach((item) => {
         HTML += `
-      <li class="bookmark" data-item-id="${item.id}">
-      <h3 class="bookmark-title">${item.title}</h3>
-      <p class="center">${bookmarkList.generateStars(item.rating)}</p>
-      </li>`;
+      <section class="bookmark data-item-id="${item.id}">
+        <li class="bookmark" data-item-id="${item.id}" tabindex="0">
+        <h3 class="bookmark-title">${item.title}</h3>
+        <p class="center">${bookmarkList.generateStars(item.rating)}</p>
+        </li>
+      </section>`;
       });
     }
 
