@@ -12,17 +12,17 @@
         </header>
         <main role="main">
           <section class="add-bookmark-container" role="region">
-            <form class="add-bookmark" id="add-bookmark">
-              <label for="add-bookmark-title">Title: </label><input id = "add-bookmark-title" class="input-add-bookmark" name="title">
-              <label for="add-bookmark-description">Description: </label><input id = "add-bookmark-description" class="input-add-bookmark" name="desc">
-              <label for="add-bookmark-url">URL:</label><input id = "add-bookmark-url" class="input-add-bookmark" name="url">
-              <label for="add-bookmark-rating">Rating:</label><input id = "add-bookmark-rating" type="number" class="input-add-bookmark" name="rating">
+            <form class="add-bookmark" id="add-bookmark" type="required">
+              <label for="add-bookmark-title">Title: </label><input id = "add-bookmark-title" class="input-add-bookmark" name="title" required>
+              <label for="add-bookmark-description">Description: </label><input id = "add-bookmark-description" class="input-add-bookmark" name="desc" required>
+              <label for="add-bookmark-url">URL:</label><input id = "add-bookmark-url" class="input-add-bookmark" name="url" required>
+              <label for="add-bookmark-rating">Rating:</label><input id = "add-bookmark-rating" type="number" class="input-add-bookmark" name="rating" required>
               <button class="add-bookmark-button">Add Item</button>
             </form>
           </section>
           <section class="search-filter-container" role="region">
             <div class="rating-filter-container">
-              <form class="bookmark-search-form">
+              <form class="bookmark-search-form" type="required">
                 <label for="bookmark-search-input" class="bookmark-search-label">Search for a Bookmark</label>
                 <input id="bookmark-search-input" class="bookmark-search-input">
               </form>

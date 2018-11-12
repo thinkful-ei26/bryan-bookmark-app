@@ -207,9 +207,9 @@ const bookmarkList = function () {
       let editBookmark = Store.bookmarks.find((bookmark) =>{
         return bookmark.id === id;
       });
-      let editingTitleHTML = `<form class="expand-bookmark-title-edit-form"><input class="expand-bookmark-title-edit" value = "${editBookmark.title}"></form>`;
+      let editingTitleHTML = `<form class="expand-bookmark-title-edit-form"><input class="expand-bookmark-title-edit" value = "${editBookmark.title}" required></form>`;
       let notEditingTitleHTML = `<h2 class="expand-bookmark-title center small-space-below">${editBookmark.title}</h2>`;
-      let editingDescHTML = `<textarea class="expand-bookmark-description-edit">${editBookmark.desc}</textarea>`;
+      let editingDescHTML = `<form class="expand-bookmark-description-edit"><input class="expand-bookmark-desc-edit" value ="${editBookmark.desc}" required></form>`;
       let notEditingDescHTML = `<p class="expand-bookmark-description center">${editBookmark.desc}</p>`;
       HTML += `
       <section role="region" class="static-view-item-container lightbox" data-item-id = "${editBookmark.id}">

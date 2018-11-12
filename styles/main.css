@@ -135,3 +135,12 @@ section.static-view-item-container {
   flex-direction: row;
 }
 
+input:invalid {
+  border-top: 1px dotted red;
+  border-left: 1px dotted red;
+}
+
+input:valid {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
