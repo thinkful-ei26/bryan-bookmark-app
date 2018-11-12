@@ -89,7 +89,6 @@ const bookmarkList = function () {
 
   function listenConfirmEditTitle() {
     $('.bookmark-container').on('submit','.expand-bookmark-title-edit-form', (e) => {
-      console.log('title edit confirmed');
       e.preventDefault();
       let itemId = $(e.target).closest('.static-view-item-container').attr('data-item-id');
       let newTitle = $('.expand-bookmark-title-edit').val();
